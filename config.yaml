@@ -1,0 +1,53 @@
+# Purpose: Centralized logging configuration for all models and experiments
+
+logging:
+  version: 1
+  disable_existing_loggers: false
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    detailed:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s (%(filename)s:%(lineno)d)'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: simple
+      stream: ext://sys.stdout
+    file:
+      class: logging.FileHandler
+      level: INFO
+      formatter: detailed
+      filename: logs/app.log
+  loggers:
+    my_app:
+      level: DEBUG
+      handlers: [console, file]
+      propagate: no
+  root:
+    level: WARNING
+    handlers: [console]
+
+output_paths:
+  # Base directories
+  base_log_dir: "logs/"
+  base_results_dir: "results/"
+  base_reports_dir: "reports/"
+  base_models_dir: "models/"
+
+  # Specific output paths
+  model_checkpoints: "models/checkpoints/"
+  training_logs: "logs/training/"
+  evaluation_results: "results/evaluation/"
+  visualizations: "reports/figures/"
+  performance_reports: "reports/performance/"
+
+aws_s3:
+  bucket_name: "my-ml-bucket"
+  region: "us-west-2"
+  access_key: "access_key_placeholder"
+  secret_key: "secret_key_placeholder"
+  model_storage_path: "s3://my-ml-bucket/models/"
+  log_storage_path: "s3://my-ml-bucket/logs/"
+  results_storage_path: "s3://my-ml-bucket/results/"
+  reports_storage_path: "s3://my-ml-bucket/reports/"

@@ -1,0 +1,25 @@
+# Core Data Science Libraries
+pandas 
+numpy 
+scipy
+statsmodels
+yfinance
+
+# Machine Learning Libraries
+scikit-learn
+tensorflow
+keras
+
+# Data Visualization Libraries
+matplotlib
+seaborn
+plotly
+
+# Jupyter Notebook
+jupyterlab
+
+# testing and logging Utilities
+pytest
+pyarrow
+fastparquet
+mlflow

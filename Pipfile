@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+numpy = "*"
+scipy = "*"
+statsmodels = "*"
+yfinance = "*"
+scikit-learn = "*"
+tensorflow = "*"
+keras = "*"
+matplotlib = "*"
+seaborn = "*"
+plotly = "*"
+jupyterlab = "*"
+pytest = "*"
+pyarrow = "*"
+fastparquet = "*"
+mlflow = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
